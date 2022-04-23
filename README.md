@@ -90,11 +90,22 @@ Related to: #1, #2
 ```
 ## 브랜치 규칙
 
-```kotlin
-이름/변경사항 태그/변경 사항
-
-예시)
-
-Eve/feat/chatting
-Hojonge/bug/Login
+```swift
+feature/#이슈 번호 - 기능 추가 작업의 경우
+develop - 개발 단계에서 커밋들으 최종 병합 지점
+hotfix/#이슈 번호 - 버그 수정 작업의 경우
+master - 릴리즈 버전 코드의 집합소 (태그로 관리)
 ```
+
+### 작업 예시
+
+**기능 추가 작업의 경우**
+1.  develop 최신 커밋에서 feature/#13 브랜치 생성
+2. 원활한 코드 리뷰를 위해 커밋을 잘개 쪼게면서 개발 진행
+3. 불필요한 커밋들은 squash 로 병합
+4. 개발이 완료되면 develop 브랜치에 rebase
+5. develop 브랜치에 rebase merge pull request 요청
+
+**버그 수정의 경우**
+
+- 브랜치만 hotfix 로 생성 후 동일한 순서로 작업 진행
